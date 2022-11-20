@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "d7bd1d9e-82f8-4746-a6e1-f1cde1b919cd",
+		"name": "anbtest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http-client-test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"id#1\",\n  \"method\": \"get\",\n  \"destination\": \"http://localhost:8080/api/run\",\n  \"timeout\": \"20000\",\n  \"headers\": {\n    \"Content-Type\": 1\n  },\n  \"authorization\": {\n    \"type\": \"basic\",\n    \"username\": \"username\",\n    \"password\": \"password\"\n  },\n  \"verifiers\": [\n    {\n      \"statusCode\": {\n        \"equals\": \"200\"\n      }\n    },\n    {\n      \"responseBody\": {\n        \"equals\": \"Pong\"\n      }\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/run/http-client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"run",
+						"http-client"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

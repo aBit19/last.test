@@ -13,19 +13,13 @@
   },
   "verifiers": [
     {
-      "type": "statusCode",
-      "details": {
-        "equals": "200",
-        "result": "fail",
-        "message": "Expected status code 200 but got 404."
+      "statusCode": {
+        "equals": "200"
       }
     },
     {
-      "type": "responseBody",
-      "details": {
-        "equals": "{}",
-        "result": "OK",
-        "message": ""
+      "responseBody": {
+        "equals": "Pong"
       }
     }
   ]
