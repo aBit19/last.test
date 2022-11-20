@@ -1,0 +1,30 @@
+{
+  "name": "Test name",
+  "runners": [
+    {
+      "type": "http-client",
+      "details": {
+        "id": "id#1",
+        "method": "get",
+        "destination": "http://localhost",
+        "timeout": "20000",
+        "headers": {"Content-Type":  1},
+        "authorization": {
+          "type": "basic",
+          "username": "username",
+          "password": "password"
+        },
+        "verifiers": [
+          {
+            "type": "statusCode",
+            "content-type": "200"
+          },
+          {
+            "type": "responseBody",
+            "equal": "{}"
+          }
+        ]
+      }
+    }
+  ]
+}

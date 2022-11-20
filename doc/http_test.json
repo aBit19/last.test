@@ -1,0 +1,32 @@
+{
+  "id": "id#1",
+  "method": "get",
+  "destination": "http://localhost:8080/api/run",
+  "timeout": "20000",
+  "headers": {
+    "Content-Type": 1
+  },
+  "authorization": {
+    "type": "basic",
+    "username": "username",
+    "password": "password"
+  },
+  "verifiers": [
+    {
+      "type": "statusCode",
+      "details": {
+        "equals": "200",
+        "result": "fail",
+        "message": "Expected status code 200 but got 404."
+      }
+    },
+    {
+      "type": "responseBody",
+      "details": {
+        "equals": "{}",
+        "result": "OK",
+        "message": ""
+      }
+    }
+  ]
+}
