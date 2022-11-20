@@ -1,6 +1,7 @@
 package gr.abit.anbtest.runner.impl.http;
 
 import gr.abit.anbtest.runner.contract.TestType;
+import gr.abit.anbtest.runner.impl.http.verifiers.HttpVerifierType;
 import io.quarkus.arc.All;
 import java.util.List;
 import javax.enterprise.context.ApplicationScoped;

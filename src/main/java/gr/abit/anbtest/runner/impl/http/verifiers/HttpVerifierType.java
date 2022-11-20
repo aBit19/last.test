@@ -1,4 +1,4 @@
-package gr.abit.anbtest.runner.impl.http;
+package gr.abit.anbtest.runner.impl.http.verifiers;
 
 import gr.abit.anbtest.runner.contract.VerifierType;
 import java.net.http.HttpResponse;

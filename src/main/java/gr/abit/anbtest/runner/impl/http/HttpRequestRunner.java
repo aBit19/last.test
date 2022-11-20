@@ -2,7 +2,8 @@ package gr.abit.anbtest.runner.impl.http;
 
 import gr.abit.anbtest.runner.contract.Runner;
 import gr.abit.anbtest.runner.contract.VerifierResult;
-import io.quarkus.arc.All;
+import gr.abit.anbtest.runner.impl.http.verifiers.HttpVerifier;
+import gr.abit.anbtest.runner.impl.http.verifiers.HttpVerifierType;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -15,7 +16,6 @@ import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Map;
-import javax.inject.Inject;
 
 public class HttpRequestRunner implements Runner<List<Map<String, Map<String, String>>>> {
 

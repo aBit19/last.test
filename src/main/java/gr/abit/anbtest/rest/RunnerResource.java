@@ -34,7 +34,6 @@ public class RunnerResource {
   @GET
   public Response ping() {
     Log.info("Receive Ping");
-
     return Response.ok("Pong").build();
   }
 
