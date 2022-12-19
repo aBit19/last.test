@@ -1,6 +1,6 @@
-package gr.abit.anbtest.runner.impl.http;
+package gr.abit.anbtest.http.runner;
 
-import gr.abit.anbtest.runner.contract.TestStep;
+import gr.abit.anbtest.contract.TestStep;
 import java.util.List;
 import java.util.Map;
 import lombok.Getter;
@@ -14,9 +14,11 @@ public class HttpRequestStep implements TestStep {
 
   String id;
   String method;
+  String body;
   long timeout;
+  Map<String, String> headers;
   String destination;
   HttpRequestStepAuth authorization;
-  List<Map<String, Map<String, String>>> verifiers;
+  List<HttpVerifier> verifiers;
 
 }

@@ -1,4 +1,4 @@
-package gr.abit.anbtest.runner.contract;
+package gr.abit.anbtest.contract;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

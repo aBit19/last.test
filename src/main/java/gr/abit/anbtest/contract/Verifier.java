@@ -1,4 +1,4 @@
-package gr.abit.anbtest.runner.contract;
+package gr.abit.anbtest.contract;
 
 public interface Verifier<I> {
   VerifierResult verify(I input);

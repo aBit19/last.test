@@ -1,4 +1,4 @@
-package gr.abit.anbtest.runner.impl.http;
+package gr.abit.anbtest.http.runner;
 
 import java.net.Authenticator;
 import java.util.Optional;
