@@ -35,7 +35,7 @@ public class HttpRequestRunner implements Runner<HttpRequestStep> {
 
   private static List<VerifierResult> verify(HttpRequestStep httpRequestStep,
       HttpResponse<String> send) {
-    return httpRequestStep.getVerifiers().stream().map(v -> v.verify(send))
+    return httpRequestStep.getAssertions().stream().map(v -> v.verify(send))
         .collect(Collectors.toList());
   }
 

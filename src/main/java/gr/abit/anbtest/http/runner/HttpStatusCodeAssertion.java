@@ -1,6 +1,9 @@
 package gr.abit.anbtest.http.runner;
 
 import gr.abit.anbtest.contract.VerifierResult;
+import gr.abit.anbtest.contract.testtype.IntType;
+import gr.abit.anbtest.contract.testtype.ObjectType;
+import gr.abit.anbtest.contract.testtype.TestType;
 import java.net.http.HttpResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,7 +15,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class HttpStatusCodeVerifier implements HttpVerifier {
+public class HttpStatusCodeAssertion implements HttpAssertion {
 
   private int expectedStatusCode;
 
@@ -28,6 +31,11 @@ public class HttpStatusCodeVerifier implements HttpVerifier {
 
     return verifierResult;
 
+  }
+
+  static TestType getTestType() {
+    return ObjectType.getBuilder().withFields(
+        IntType.withNameAndDescription("expectedStatusCode", "The expected status code")).build();
   }
 
 }

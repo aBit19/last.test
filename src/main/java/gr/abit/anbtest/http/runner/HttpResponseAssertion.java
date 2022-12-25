@@ -1,6 +1,9 @@
 package gr.abit.anbtest.http.runner;
 
 import gr.abit.anbtest.contract.VerifierResult;
+import gr.abit.anbtest.contract.testtype.ObjectType;
+import gr.abit.anbtest.contract.testtype.StringType;
+import gr.abit.anbtest.contract.testtype.TestType;
 import java.net.http.HttpResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +14,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class HttpResponseVerifier implements HttpVerifier {
+public class HttpResponseAssertion implements HttpAssertion {
   private String expectedBody;
 
   @Override
@@ -27,4 +30,8 @@ public class HttpResponseVerifier implements HttpVerifier {
     return verifierResult;
   }
 
+  static TestType getTestType() {
+    return ObjectType.getBuilder().withFields(
+        StringType.withNameAndDescription("expectedBody", "The expected body")).build();
+  }
 }

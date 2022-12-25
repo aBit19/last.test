@@ -11,9 +11,9 @@ import javax.enterprise.context.ApplicationScoped;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
 @JsonSubTypes({
-    @JsonSubTypes.Type(HttpResponseVerifier.class),
-    @JsonSubTypes.Type(HttpStatusCodeVerifier.class) }
+    @JsonSubTypes.Type(HttpResponseAssertion.class),
+    @JsonSubTypes.Type(HttpStatusCodeAssertion.class) }
 )
-public interface HttpVerifier extends Verifier<HttpResponse<String>> {
+public interface HttpAssertion extends Verifier<HttpResponse<String>> {
 
 }
