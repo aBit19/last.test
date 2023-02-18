@@ -2,7 +2,7 @@ package gr.abit.anbtest.http.rest;
 
 import gr.abit.anbtest.contract.VerifierResult;
 import gr.abit.anbtest.http.runner.HttpRequestRunner;
-import gr.abit.anbtest.http.runner.HttpRequestStep;
+import gr.abit.anbtest.http.runner.HttpTest;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -26,7 +26,7 @@ public class HttpRunnerResource {
   @POST
   @Path("http")
   @Consumes("application/json")
-  public Response runTest(HttpRequestStep requestStep) {
+  public Response runTest(HttpTest requestStep) {
     List<VerifierResult> results = runnerCoordinator.run(requestStep);
     return Response.ok(results).build();
   }

@@ -1,6 +1,6 @@
 package gr.abit.anbtest.http.runner;
 
-import gr.abit.anbtest.contract.TestStep;
+import gr.abit.anbtest.contract.Test;
 import gr.abit.anbtest.contract.testtype.EnumType;
 import gr.abit.anbtest.contract.testtype.IntType;
 import gr.abit.anbtest.contract.testtype.ListType;
@@ -20,7 +20,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class HttpRequestStep implements TestStep {
+public class HttpTest implements Test {
 
   String id;
   String method;
@@ -33,11 +33,11 @@ public class HttpRequestStep implements TestStep {
 
   @Override
   public TestSchema getSchema() {
-    return new HttpRequestStepDef();
+    return new HttpSchema();
   }
 
   @ApplicationScoped
-  public static class HttpRequestStepDef implements TestSchema {
+  public static class HttpSchema implements TestSchema {
 
     @Override
     public String getName() {
@@ -45,7 +45,7 @@ public class HttpRequestStep implements TestStep {
     }
 
     @Override
-    public TestType getType() {
+    public TestType getDefinition() {
       ObjectTypeBuilder builder = ObjectType.getBuilder();
       return builder.withFields(
               StringType.withName("id"),
@@ -71,6 +71,5 @@ public class HttpRequestStep implements TestStep {
           )
           .build();
     }
-
   }
 }

@@ -28,6 +28,4 @@ public class StoreResource {
     return Response.ok(Status.CREATED).build();
   }
 
-
-
 }
