@@ -1,5 +1,6 @@
 package gr.abit.anbtest.http.runner;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import gr.abit.anbtest.contract.VerifierResult;
 import gr.abit.anbtest.contract.testtype.IntType;
 import gr.abit.anbtest.contract.testtype.ObjectType;
@@ -17,6 +18,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class HttpStatusCodeAssertion implements HttpAssertion {
 
+  @JsonProperty( "expected_status_code")
   private int expectedStatusCode;
 
   @Override
