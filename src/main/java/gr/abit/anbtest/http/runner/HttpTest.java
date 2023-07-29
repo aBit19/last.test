@@ -12,7 +12,7 @@ import gr.abit.anbtest.contract.testtype.TestSchema;
 import gr.abit.anbtest.contract.testtype.TestType;
 import java.util.List;
 import java.util.Map;
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
