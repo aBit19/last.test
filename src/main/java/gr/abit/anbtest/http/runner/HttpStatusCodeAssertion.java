@@ -1,7 +1,6 @@
 package gr.abit.anbtest.http.runner;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import gr.abit.anbtest.contract.VerifierResult;
 import gr.abit.anbtest.contract.testtype.IntType;
 import gr.abit.anbtest.contract.testtype.ObjectType;
 import gr.abit.anbtest.contract.testtype.TestType;

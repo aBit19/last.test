@@ -1,7 +1,7 @@
 package gr.abit.anbtest.http.runner;
 
 import gr.abit.anbtest.contract.Runner;
-import gr.abit.anbtest.contract.VerifierResult;
+import gr.abit.anbtest.contract.Verifier.VerifierResult;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;

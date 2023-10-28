@@ -1,6 +1,6 @@
 package gr.abit.anbtest.http.rest;
 
-import gr.abit.anbtest.contract.VerifierResult;
+import gr.abit.anbtest.contract.Verifier.VerifierResult;
 import gr.abit.anbtest.http.runner.HttpRequestRunner;
 import gr.abit.anbtest.http.runner.HttpTest;
 import java.util.List;
@@ -28,6 +28,7 @@ public class HttpRunnerResource {
   @Consumes("application/json")
   public Response runTest(HttpTest requestStep) {
     List<VerifierResult> results = runnerCoordinator.run(requestStep);
+
     return Response.ok(results).build();
   }
 
