@@ -1,10 +1,10 @@
 package gr.abit.anbtest.contract;
 
-import gr.abit.anbtest.contract.Verifier.VerifierResult;
+import gr.abit.anbtest.contract.Assertion.TestResult;
 import java.util.List;
 
 public interface Runner<T extends Test> {
 
-  List<VerifierResult> run(T testStep);
+  List<TestResult> run(T test);
 
 }

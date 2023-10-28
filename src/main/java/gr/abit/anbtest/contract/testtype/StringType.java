@@ -1,7 +1,6 @@
 package gr.abit.anbtest.contract.testtype;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 public class StringType implements TestType {

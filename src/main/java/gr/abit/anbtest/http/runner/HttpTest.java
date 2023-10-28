@@ -13,6 +13,7 @@ import gr.abit.anbtest.contract.testtype.TestType;
 import java.util.List;
 import java.util.Map;
 import jakarta.enterprise.context.ApplicationScoped;
+import java.util.Optional;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -34,6 +35,10 @@ public class HttpTest implements Test {
   @Override
   public TestSchema getSchema() {
     return new HttpSchema();
+  }
+
+  public Optional<HttpBasicAuth> getAuthorization() {
+    return Optional.ofNullable(authorization);
   }
 
   @ApplicationScoped

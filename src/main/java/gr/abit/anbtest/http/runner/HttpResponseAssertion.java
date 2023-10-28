@@ -20,8 +20,8 @@ public class HttpResponseAssertion implements HttpAssertion {
   private String expectedBody;
 
   @Override
-  public VerifierResult verify(HttpResponse<String> input) {
-    VerifierResult verifierResult = new VerifierResult();
+  public TestResult verify(HttpResponse<String> input) {
+    TestResult verifierResult = new TestResult();
 
     boolean pass = input.body().equals(expectedBody);
     verifierResult.setSuccess(pass);
