@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "0bb6e862-744d-4cfa-a9b1-a2ea958218c8",
+		"name": "last.test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3280265"
+	},
+	"item": [
+		{
+			"name": "store",
+			"item": [
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"id#1\",\n  \"method\": \"get\",\n  \"destination\": \"http://localhost:8080/api/run\",\n  \"timeout\": \"20000\",\n  \"headers\": {\n    \"Content-Type\": 1\n  },\n  \"authorization\": {\n    \"type\": \"basic\",\n    \"username\": \"username\",\n    \"password\": \"password\"\n  },\n  \"assertions\": [\n    {\n      \"expected_status_code\": \"200\"\n    },\n    {\n      \"expected_body\": \"Pong\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/store/http",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"store",
+								"http"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/store/http/742199",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"store",
+								"http",
+								"742199"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "schemas",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Folder",
+			"item": [
+				{
+					"name": "run http",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"id#1\",\n  \"method\": \"get\",\n  \"destination\": \"http://localhost:8080/api/run\",\n  \"timeout\": \"20000\",\n  \"headers\": {\n    \"Content-Type\": 1\n  },\n  \"authorization\": {\n    \"type\": \"basic\",\n    \"username\": \"username\",\n    \"password\": \"password\"\n  },\n  \"assertions\": [\n    {\n      \"expected_status_code\": \"200\"\n    },\n    {\n      \"expected_body\": \"Pong\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/run/http",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"run",
+								"http"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

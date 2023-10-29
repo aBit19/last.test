@@ -3,11 +3,13 @@ package gr.abit.anbtest.store;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.Response;
-import jakarta.ws.rs.core.Response.Status;
+import java.net.URI;
 
 @Path("/api/store/")
 public class StoreResource {
@@ -22,10 +24,17 @@ public class StoreResource {
   @POST
   @Path("{type}")
   @Consumes("application/json")
-  public Response runTest(
+  public Response store(
       @PathParam("type") String type, String testDetails) {
-    storeService.store(type, testDetails);
-    return Response.ok(Status.CREATED).build();
+    return Response.created(URI.create(String.format("api/store/%s/%s", type, storeService.store(type, testDetails)))).build();
+  }
+
+  @GET
+  @Path("{type}/{id}")
+  @Produces("application/json")
+  public Response get(
+      @PathParam("type") String type, @PathParam("id") String id) {
+    return Response.ok(storeService.get(type, id)).build();
   }
 
 }
