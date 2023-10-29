@@ -21,5 +21,4 @@ public class TestSchemaResource {
     return schemas;
   }
 
-
 }
