@@ -1,4 +1,4 @@
-package gr.abit.anbtest;
+package gr.abit.anbtest.contract.testtype;
 
 import gr.abit.anbtest.contract.testtype.TestSchema;
 import io.quarkus.arc.All;
