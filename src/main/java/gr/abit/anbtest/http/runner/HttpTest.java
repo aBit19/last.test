@@ -24,6 +24,7 @@ import lombok.Setter;
 public class HttpTest implements Test {
 
   String id;
+  String description;
   String method;
   String body;
   long timeout;
@@ -42,11 +43,15 @@ public class HttpTest implements Test {
   }
 
   @ApplicationScoped
-  public static class HttpSchema implements TestSchema {
-
+  static class HttpSchema implements TestSchema {
     @Override
     public String getName() {
       return "http-request";
+    }
+
+    @Override
+    public String getDescription() {
+      return "Run http requests.";
     }
 
     @Override

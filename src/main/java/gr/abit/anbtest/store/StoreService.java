@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @ApplicationScoped
 public class StoreService {
 
-  private static Map<String, Map<String, String>> db = new ConcurrentHashMap<>();
+  private static final Map<String, Map<String, String>> db = new ConcurrentHashMap<>();
   String store(String type, String value) {
     String id = new Random().nextInt(0, 1_000_000) + "";
     if (! db.containsKey(type)) {
