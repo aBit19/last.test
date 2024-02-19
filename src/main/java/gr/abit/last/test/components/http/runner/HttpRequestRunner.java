@@ -1,4 +1,4 @@
-package gr.abit.last.test.http.runner;
+package gr.abit.last.test.components.http.runner;
 
 import gr.abit.last.test.contract.Runner;
 import gr.abit.last.test.contract.Assertion.TestResult;

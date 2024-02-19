@@ -1,4 +1,4 @@
-package gr.abit.last.test.http.runner;
+package gr.abit.last.test.components.http.runner;
 
 import gr.abit.last.test.contract.testtype.EnumType;
 import gr.abit.last.test.contract.testtype.IntType;
@@ -7,7 +7,7 @@ import gr.abit.last.test.contract.testtype.MapType;
 import gr.abit.last.test.contract.testtype.ObjectType;
 import gr.abit.last.test.contract.testtype.ObjectType.ObjectTypeBuilder;
 import gr.abit.last.test.contract.testtype.StringType;
-import gr.abit.last.test.contract.testtype.TestSchema;
+import gr.abit.last.test.contract.TestSchema;
 import gr.abit.last.test.contract.testtype.TestType;
 import jakarta.enterprise.context.ApplicationScoped;
 
@@ -16,7 +16,7 @@ public class HttpSchema implements TestSchema {
 
   @Override
   public String getName() {
-    return "http-request";
+    return "http";
   }
 
   @Override

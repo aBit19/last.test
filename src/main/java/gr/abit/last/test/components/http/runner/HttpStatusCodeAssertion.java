@@ -1,8 +1,8 @@
-package gr.abit.last.test.http.runner;
+package gr.abit.last.test.components.http.runner;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import gr.abit.last.test.contract.testtype.IntType;
 import gr.abit.last.test.contract.testtype.ObjectType;
-import gr.abit.last.test.contract.testtype.StringType;
 import gr.abit.last.test.contract.testtype.TestType;
 import java.net.http.HttpResponse;
 import lombok.AllArgsConstructor;
@@ -10,30 +10,33 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class HttpResponseAssertion implements HttpAssertion {
+@NoArgsConstructor
+public class HttpStatusCodeAssertion implements HttpAssertion {
 
-  @JsonProperty( "expected_body")
-  private String expectedBody;
+  @JsonProperty( "expected_status_code")
+  private int expectedStatusCode;
 
   @Override
   public TestResult verify(HttpResponse<String> input) {
     TestResult verifierResult = new TestResult();
 
-    boolean pass = input.body().equals(expectedBody);
+    boolean pass = input.statusCode() == expectedStatusCode;
     verifierResult.setSuccess(pass);
 
-    String message = String.format("Expected body %s, got %s", expectedBody, input.body());
+    String message = String.format("Expected status %d, got %d", expectedStatusCode, input.statusCode());
     verifierResult.setMessage(message);
 
     return verifierResult;
+
   }
 
   static TestType getTestType() {
     return ObjectType.getBuilder().withFields(
-        StringType.withNameAndDescription("expectedBody", "The expected body")).build();
+        IntType.withNameAndDescription("expectedStatusCode", "The expected status code")).build();
   }
+
 }

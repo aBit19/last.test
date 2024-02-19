@@ -1,11 +1,10 @@
-package gr.abit.last.test.contract.testtype;
+package gr.abit.last.test.rest;
 
-import io.quarkus.arc.All;
+import gr.abit.last.test.contract.SchemaProvider;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 import java.net.URI;
-import java.util.List;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -15,25 +14,29 @@ import lombok.Getter;
 import lombok.Setter;
 
 @ApplicationScoped
-@Path("/api/tests/schemas/")
+@Path("/api/schemas/")
 public class TestSchemaResource {
 
+  private final SchemaProvider schemaProvider;
+
   @Inject
-  @All
-  List<TestSchema> schemas;
+  public TestSchemaResource(SchemaProvider schemaProvider) {
+    this.schemaProvider = schemaProvider;
+  }
 
   @GET
   public Response get() {
     return Response.ok(
-        schemas.stream().map(sc -> new TestSchemaSummary(sc.getName(), sc.getDescription(),
-                URI.create("/api/tests/schemas/" + sc.getName())))
+        schemaProvider.getSchemas().stream()
+            .map(sc -> new TestSchemaSummary(sc.getName(), sc.getDescription(),
+                URI.create("/api/schemas/" + sc.getName())))
             .toList()).build();
   }
 
   @GET
   @Path("{name}")
   public Response getSchema(@PathParam("name") String name) {
-    var findByName = schemas.stream().filter(sc -> sc.getName().equals(name)).findAny();
+    var findByName = schemaProvider.getSchemas().stream().filter(sc -> sc.getName().equals(name)).findAny();
     if (findByName.isPresent()) {
       return Response.ok(findByName).build();
     } else {
@@ -45,6 +48,7 @@ public class TestSchemaResource {
   @Setter
   @AllArgsConstructor
   public static class TestSchemaSummary {
+
     String name;
     String description;
     URI uri;

@@ -1,8 +1,8 @@
-package gr.abit.last.test.http.rest;
+package gr.abit.last.test.components.http.rest;
 
+import gr.abit.last.test.components.http.runner.HttpRequestRunner;
 import gr.abit.last.test.contract.Assertion.TestResult;
-import gr.abit.last.test.http.runner.HttpRequestRunner;
-import gr.abit.last.test.http.runner.HttpTest;
+import gr.abit.last.test.components.http.runner.HttpTest;
 import java.util.List;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
@@ -16,18 +16,18 @@ import io.quarkus.logging.Log;
 @Path("/api/run/")
 public class HttpRunnerResource {
 
-  private final HttpRequestRunner runnerCoordinator;
+  private final HttpRequestRunner requestRunner;
 
   @Inject
-  public HttpRunnerResource(HttpRequestRunner runnerCoordinator) {
-    this.runnerCoordinator = runnerCoordinator;
+  public HttpRunnerResource(HttpRequestRunner requestRunner) {
+    this.requestRunner = requestRunner;
   }
 
   @POST
   @Path("http")
   @Consumes("application/json")
   public Response runTest(HttpTest requestStep) {
-    List<TestResult> results = runnerCoordinator.run(requestStep);
+    List<TestResult> results = requestRunner.run(requestStep);
 
     return Response.ok(results).build();
   }

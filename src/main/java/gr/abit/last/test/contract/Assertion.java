@@ -7,7 +7,6 @@ import lombok.Setter;
 public interface Assertion<I> {
   TestResult verify(I input);
 
-
   @Setter
   @Getter
   @NoArgsConstructor

@@ -1,4 +1,4 @@
-package gr.abit.last.test.contract.store;
+package gr.abit.last.test.store;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import java.util.Map;
