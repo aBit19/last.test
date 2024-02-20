@@ -1,9 +1,6 @@
-package gr.abit.last.test.components.http.runner;
+package gr.abit.last.test.plugins.http.runner;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import gr.abit.last.test.contract.testtype.ObjectType;
-import gr.abit.last.test.contract.testtype.StringType;
-import gr.abit.last.test.contract.testtype.TestType;
 import java.net.http.HttpResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,8 +29,5 @@ public class HttpResponseAssertion implements HttpAssertion {
     return verifierResult;
   }
 
-  static TestType getTestType() {
-    return ObjectType.getBuilder().withFields(
-        StringType.withNameAndDescription("expectedBody", "The expected body")).build();
-  }
+
 }

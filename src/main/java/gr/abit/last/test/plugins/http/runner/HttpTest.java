@@ -1,4 +1,4 @@
-package gr.abit.last.test.components.http.runner;
+package gr.abit.last.test.plugins.http.runner;
 
 import gr.abit.last.test.contract.Test;
 import java.util.List;

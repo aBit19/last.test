@@ -1,4 +1,4 @@
-package gr.abit.last.test.components.http.runner;
+package gr.abit.last.test.plugins.http.runner;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSubTypes;

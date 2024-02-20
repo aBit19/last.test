@@ -1,7 +1,7 @@
-package gr.abit.last.test.components.http.runner;
+package gr.abit.last.test.plugins.http.runner;
 
-import gr.abit.last.test.contract.testtype.StringType;
-import gr.abit.last.test.contract.testtype.TestType;
+import gr.abit.last.test.rest.schema.StringType;
+import gr.abit.last.test.rest.schema.TestType;
 import java.net.Authenticator;
 import java.util.List;
 import java.util.Optional;

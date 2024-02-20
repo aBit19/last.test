@@ -1,21 +1,22 @@
-package gr.abit.last.test.components.http.runner;
+package gr.abit.last.test.plugins.http.rest;
 
-import gr.abit.last.test.contract.testtype.EnumType;
-import gr.abit.last.test.contract.testtype.IntType;
-import gr.abit.last.test.contract.testtype.ListType;
-import gr.abit.last.test.contract.testtype.MapType;
-import gr.abit.last.test.contract.testtype.ObjectType;
-import gr.abit.last.test.contract.testtype.ObjectType.ObjectTypeBuilder;
-import gr.abit.last.test.contract.testtype.StringType;
-import gr.abit.last.test.contract.TestSchema;
-import gr.abit.last.test.contract.testtype.TestType;
+import gr.abit.last.test.plugins.http.runner.HttpBasicAuth;
+import gr.abit.last.test.rest.schema.EnumType;
+import gr.abit.last.test.rest.schema.IntType;
+import gr.abit.last.test.rest.schema.ListType;
+import gr.abit.last.test.rest.schema.MapType;
+import gr.abit.last.test.rest.schema.ObjectType;
+import gr.abit.last.test.rest.schema.ObjectType.ObjectTypeBuilder;
+import gr.abit.last.test.rest.schema.StringType;
+import gr.abit.last.test.rest.schema.TestSchema;
+import gr.abit.last.test.rest.schema.TestType;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 public class HttpSchema implements TestSchema {
 
   @Override
-  public String getName() {
+  public String getTestCode() {
     return "http";
   }
 
@@ -44,11 +45,22 @@ public class HttpSchema implements TestSchema {
                 .withDescription("Test assertions")
                 .ofType(
                     EnumType.getBuilder().withEnums(
-                        HttpResponseAssertion.getTestType(),
-                        HttpStatusCodeAssertion.getTestType()
+                        responseAssertion(),
+                        statusCodeAssertion()
                     ).withDescription("Http assertions").build()
                 ).build()
         )
         .build();
   }
+
+  private static TestType responseAssertion() {
+    return ObjectType.getBuilder().withFields(
+        StringType.withNameAndDescription("expectedBody", "The expected body")).build();
+  }
+
+  static TestType statusCodeAssertion() {
+    return ObjectType.getBuilder().withFields(
+        IntType.withNameAndDescription("expectedStatusCode", "The expected status code")).build();
+  }
+
 }

@@ -1,6 +1,6 @@
-package gr.abit.last.test.components.http.runner;
+package gr.abit.last.test.plugins.http.runner;
 
-import gr.abit.last.test.contract.Runner;
+import gr.abit.last.test.contract.TestRunner;
 import gr.abit.last.test.contract.Assertion.TestResult;
 import java.io.IOException;
 import java.net.URI;
@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class HttpRequestRunner implements Runner<HttpTest> {
+public class HttpRequestRunner implements TestRunner<HttpTest> {
 
   public HttpRequestRunner() {}
 

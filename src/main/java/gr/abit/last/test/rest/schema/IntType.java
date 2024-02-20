@@ -1,4 +1,4 @@
-package gr.abit.last.test.contract.testtype;
+package gr.abit.last.test.rest.schema;
 
 import lombok.Getter;
 
