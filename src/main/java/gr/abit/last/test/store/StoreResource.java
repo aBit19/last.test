@@ -24,10 +24,11 @@ public class StoreResource {
   }
 
   @POST
+  @Path("{project}")
   @Consumes(MediaType.APPLICATION_JSON)
-  public Response store(String testDetails) {
+  public Response store(@PathParam("project") String project, String testDetails) {
     return Response.created(
-            URI.create(String.format("api/store/%s", storeService.store(testDetails))))
+            URI.create(String.format("api/store/%s/%s", project, storeService.store(project, testDetails))))
         .build();
   }
 
@@ -38,11 +39,13 @@ public class StoreResource {
   }
 
   @GET
-  @Path("{id}")
+  @Path("{project}/{id}")
   @Produces(MediaType.APPLICATION_JSON)
-  public Response getById(@PathParam("id") String id) {
+  public Response getById(
+      @PathParam("project") String project,
+      @PathParam("id") String id) {
 
-    Optional<String> test = storeService.get(id);
+    Optional<String> test = storeService.get(project, id);
     if (test.isPresent()) {
       return Response.ok(test.get()).build();
     } else {

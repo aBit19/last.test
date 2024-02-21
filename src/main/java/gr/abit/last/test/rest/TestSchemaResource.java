@@ -2,7 +2,6 @@ package gr.abit.last.test.rest;
 
 import io.quarkus.arc.All;
 import gr.abit.last.test.rest.schema.TestSchema;
-import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
