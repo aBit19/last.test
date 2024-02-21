@@ -1,6 +1,5 @@
 package gr.abit.last.test.store;
 
-
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -25,7 +24,7 @@ public class StoreResource {
   }
 
   @POST
-  @Consumes("application/json")
+  @Consumes(MediaType.APPLICATION_JSON)
   public Response store(String testDetails) {
     return Response.created(
             URI.create(String.format("api/store/%s", storeService.store(testDetails))))
@@ -40,7 +39,7 @@ public class StoreResource {
 
   @GET
   @Path("{id}")
-  @Produces("application/json")
+  @Produces(MediaType.APPLICATION_JSON)
   public Response getById(@PathParam("id") String id) {
 
     Optional<String> test = storeService.get(id);

@@ -13,7 +13,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class HttpResponseAssertion implements HttpAssertion {
 
-  @JsonProperty( "expected_body")
+  @JsonProperty("expected_body")
   private String expectedBody;
 
   @Override

@@ -7,14 +7,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class HttpStatusCodeAssertion implements HttpAssertion {
 
-  @JsonProperty( "expected_status_code")
+  @JsonProperty("expected_status_code")
   private int expectedStatusCode;
 
   @Override

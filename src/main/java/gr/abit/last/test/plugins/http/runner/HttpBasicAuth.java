@@ -21,7 +21,6 @@ public class HttpBasicAuth {
     return Optional.ofNullable(null);
   }
 
-
   public static List<TestType> getTestSchema() {
     return List.of(
         StringType.withName("username"),

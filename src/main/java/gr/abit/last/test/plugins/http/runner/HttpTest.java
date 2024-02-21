@@ -29,6 +29,16 @@ public class HttpTest implements Test {
     return name;
   }
 
+  @Override
+  public String getTestCode() {
+    return "http";
+  }
+
+  @Override
+  public String getDescription() {
+    return description;
+  }
+
   public Optional<HttpBasicAuth> getAuthorization() {
     return Optional.ofNullable(authorization);
   }
