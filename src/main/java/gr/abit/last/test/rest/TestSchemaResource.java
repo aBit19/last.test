@@ -30,8 +30,8 @@ public class TestSchemaResource {
   public Response get() {
     return Response.ok(
         schemas.stream()
-            .map(sc -> new TestSchemaSummary(sc.getTestCode(), sc.getDescription(),
-                URI.create("/api/schemas/" + sc.getTestCode())))
+            .map(sc -> new TestSchemaSummary(sc.getType(), sc.getDescription(),
+                URI.create("/api/schemas/" + sc.getType())))
             .toList()).build();
   }
 
@@ -39,7 +39,7 @@ public class TestSchemaResource {
   @Path("{name}")
   @Produces(MediaType.APPLICATION_JSON)
   public Response getSchema(@PathParam("name") String name) {
-    var findByName = schemas.stream().filter(sc -> sc.getTestCode().equals(name)).findAny();
+    var findByName = schemas.stream().filter(sc -> sc.getType().equals(name)).findAny();
     if (findByName.isPresent()) {
       return Response.ok(findByName).build();
     } else {

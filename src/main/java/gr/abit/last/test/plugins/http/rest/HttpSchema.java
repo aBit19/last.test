@@ -16,7 +16,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 public class HttpSchema implements TestSchema {
 
   @Override
-  public String getTestCode() {
+  public String getType() {
     return "http";
   }
 

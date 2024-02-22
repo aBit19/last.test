@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"id#1\",\n  \"description\": \"Test\",\n  \"method\": \"get\",\n  \"destination\": \"http://localhost:8080/api/run\",\n  \"timeout\": \"20000\",\n  \"headers\": {\n    \"Content-Type\": 1\n  },\n  \"authorization\": {\n    \"type\": \"basic\",\n    \"username\": \"username\",\n    \"password\": \"password\"\n  },\n  \"assertions\": [\n    {\n      \"expected_status_code\": \"200\"\n    },\n    {\n      \"expected_body\": \"Pong\"\n    }\n  ]\n}",
+							"raw": "{\n  \"name\": \"Step 2\",\n  \"description\": \"Create order\",\n  \"type\": \"http\",\n  \"method\": \"post\",\n  \"destination\": \"http://localhost:8080/api/run\",\n  \"timeout\": \"20000\",\n  \"headers\": {\n    \"Content-Type\": 1\n  },\n  \"authorization\": {\n    \"type\": \"basic\",\n    \"username\": \"username\",\n    \"password\": \"password\"\n  },\n  \"assertions\": [\n    {\n      \"expected_status_code\": \"200\"\n    },\n    {\n      \"expected_body\": \"Pong\"\n    }\n  ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -45,7 +45,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/store/logistics/722272",
+							"raw": "http://localhost:8080/api/store/logistics/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -55,7 +55,7 @@
 								"api",
 								"store",
 								"logistics",
-								"722272"
+								""
 							]
 						}
 					},

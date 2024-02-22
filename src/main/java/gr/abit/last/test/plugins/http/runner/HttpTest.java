@@ -30,7 +30,7 @@ public class HttpTest implements Test {
   }
 
   @Override
-  public String getTestCode() {
+  public String getType() {
     return "http";
   }
 

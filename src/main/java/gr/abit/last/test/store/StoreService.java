@@ -2,6 +2,7 @@ package gr.abit.last.test.store;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
@@ -23,4 +24,9 @@ public class StoreService {
   Optional<String> get(String project, String id) {
     return Optional.ofNullable(db.getOrDefault(project, Collections.emptyMap()).get(id));
   }
+
+  Map<String, String> get(String project) {
+    return db.getOrDefault(project, Collections.emptyMap());
+  }
+
 }

@@ -1,7 +1,7 @@
 package gr.abit.last.test.rest.schema;
 
 public interface TestSchema {
-  String getTestCode();
+  String getType();
   String getDescription();
   TestType getDefinition();
 
